@@ -1,0 +1,225 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padam</title>
+    <link rel="shortcut icon" href="logo.png" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .hero {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 1.25rem;
+            width: 400px;
+            text-align: right;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+
+        }
+
+        .journey {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .journey-items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+
+        }
+
+        .journey-item {
+            width: 500px;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .journey-item .content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .journey-item {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .journey-item img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            background-color: #007052;
+            color: #fff;
+            border-radius: 100%;
+            border: 7px solid #f1f1f1;
+            text-align: center;
+        }
+
+        .about {
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .contact {
+            background-image: url('map-image.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 300px;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="hero">
+            <img src="header-bg.jpg" alt="hero">
+        </section>
+        <section class="about">
+            <p>
+                Hello, I'm Padam Shrestha.<br> A software engineer dedicated to crafting innovative web
+                and mobile applications.
+            </p>
+        </section>
+        <section class="journey">
+            <h2>My journey</h2>
+            <div class="journey-items"></div>
+        </section>
+
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>padam.shrest@gmail.com</p>
+        </section>
+    </main>
+
+    <script>
+        const journeyItems = document.querySelector('.journey-items');
+        const items = [
+            {
+                image: "kemiTornioUAS.jpg",
+                title: "August 2007 - Joined KTUAS",
+                description: "Joined Kemi Tornio University of Applied Sciences for Bachelor Engineering in Information Technology. The name of the university has now changed to Lapland Univeristy of Appied Sciences."
+            },
+            {
+                image: "web.png",
+                title: "January 2009 - Freelanching",
+                description: "Started to work as freelanching web developer. Cakephp/Wordpress"
+            },
+            {
+                image: "kemiTornioUAS.jpg",
+                title: "July 2010 - Document management system",
+                description: "This project is a Web-based Document Management System for Kemi-Tornio University of Applied Sciences for staffs and students."
+            },
+            {
+                image: "kemiTornioUAS.jpg",
+                title: "February 2007 - Online Map Application (Bachelor Thesis)",
+                description: "This project is about building a web based map application for tracking vehicles and personnel on the working field."
+            },
+            {
+                image: "imss.png",
+                title: "June 2011 - CMS development for IMSS Ltd. Oy. Ab",
+                description: "Content Management System with PHP/MySQL for managing the websites powered by IMSS Ltd. Oy Ab."
+            },
+            {
+                image: "kemiTornioUAS.jpg",
+                title: "November 2011 - Graduation from KTUAS",
+                description: "Graduated from Kemi Tornio University of Appied Sciences.."
+            },
+            {
+                image: "nepali_audio_book.png",
+                title: "November 2013 - Nepali audio book (android)",
+                description: "Published android application to Google Play Store. Turely developed for entertainment purpose."
+            },
+            {
+                image: "abo.png",
+                title: "August 2014 - Joined Åbo Akademi University",
+                description: "Masters in Software Engineering."
+            },
+            {
+                image: "ifind.png",
+                title: "August 2014 - iFind mobile application",
+                description: "Developed a native android mobile application for Turun Liikemainonta."
+            },
+            {
+                image: "nepali_audio_book.png",
+                title: "November 2013 - Nepali audio book (android)",
+                description: "Published android application to Google Play Store. Turely developed for entertainment purpose."
+            },
+            {
+                image: "richard_logo.png",
+                title: "June 2015 - Software developer at schahl",
+                description: "Content management system for “Richard Schahl GmbH”, website (http://schahl.de/) and customer analysis solution. (Cakephp/JavaFx)."
+            },
+            {
+                image: "boatday.png",
+                title: "September 2015 - Web developer at Boatday",
+                description: "Parse.com(BackboneJs), RequireJS, Cordova, Lessc, Android and few other js libraries."
+            },
+            {
+                image: "bhanjyang.png",
+                title: "April 2016 - Web developer at Bhanjyangnews",
+                description: "Web app + CMS for local newspaper(Bhanjyang Daily). AngularJs, Lessc, Cakephp/MySQL"
+            },
+            {
+                image: "nepali_audio_book.png",
+                title: "January 2017 - Nepali audio book",
+                description: "Completely rebuilt the application using Flutter for the mobile (android and ios) frontend and Laravel for the backend API."
+            },
+        ].forEach(item => {
+
+            const journeyItem = document.createElement('div');
+            journeyItem.classList.add('journey-item');
+            journeyItem.innerHTML = `
+                <img src="${item.image}" alt="${item.title}">
+                <div class="content">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </div>
+            `;
+            journeyItems.appendChild(journeyItem);
+        });
+    </script>
+</body>
+
+</html>
